@@ -19,10 +19,14 @@ Use-Case диаграмма (основные кейсы)
 ER-диаграмма сущностей
 ![](er-diag.png)
 
+## Прототип интерфейса (sketch) со всеми страницами. (выполнить в  https://www.figma.com)  ##
+![](figma_select_vegetable.png)
+
 ## Архитектура приложения ##
 Выбор архитектуры (MPA-SPA)
 
 Multi-page application
+
 ## Техническое решение ##
 Выбор  Backend-стеков:
 
