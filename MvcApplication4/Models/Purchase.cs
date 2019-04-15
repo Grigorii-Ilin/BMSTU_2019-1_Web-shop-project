@@ -7,15 +7,11 @@ namespace MvcApplication4.Models
 {
     public class Purchase
     {
-        // ID покупки
-        public int PurchaseId { get; set; }
-        // имя и фамилия покупателя
-        public string Person { get; set; }
-        // адрес покупателя
-        public string Address { get; set; }
-        // ID книги
-        public int BookId { get; set; }
-        // дата покупки
+        public int Id { get; set; }
+        public int VegetableId { get; set; }
+        public int ClientId { get; set; }
         public DateTime Date { get; set; }
+        public string Address { get; set; }
+        public decimal PriceTotal { get; set; }
     }
 }

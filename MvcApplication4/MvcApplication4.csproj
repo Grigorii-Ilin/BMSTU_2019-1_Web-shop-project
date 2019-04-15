@@ -120,12 +120,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AutoContext.cs" />
-    <Compile Include="Models\AutoDbInitializer.cs" />
-    <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\BookContext.cs" />
-    <Compile Include="Models\BookDbInitializer.cs" />
-    <Compile Include="Models\Path1.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\BasketItem.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\UserAbstract.cs" />
+    <Compile Include="Models\WebShopContext.cs" />
+    <Compile Include="Models\WebShopDbInitializer.cs" />
     <Compile Include="Models\Purchase.cs" />
     <Compile Include="Models\Vegetable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

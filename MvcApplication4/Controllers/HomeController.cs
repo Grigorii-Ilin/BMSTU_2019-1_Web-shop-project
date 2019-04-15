@@ -10,15 +10,15 @@ namespace MvcApplication4.Controllers
     public class HomeController : Controller
     {
         // создаем контекст данных
-        BookContext db = new BookContext();
+        WebShopContext db = new WebShopContext();
         
         public ActionResult Index()
         {
-            // получаем из бд все объекты Book
-            IEnumerable<Book> books = db.Books;
-            // передаем все полученный объекты в динамическое свойство Books в ViewBag
-            ViewBag.Books = books;
-            // возвращаем представление
+            //// получаем из бд все объекты Book
+            //IEnumerable<Book> books = db.Books;
+            //// передаем все полученный объекты в динамическое свойство Books в ViewBag
+            //ViewBag.Books = books;
+            //// возвращаем представление
 
             IEnumerable<Vegetable> vegetables = db.Vegetables;
             ViewBag.Vegetables = vegetables;
@@ -39,7 +39,7 @@ namespace MvcApplication4.Controllers
             db.Purchases.Add(purchase);
             // сохраняем в бд все изменения
             db.SaveChanges();
-            return "Спасибо," + purchase.Person + ", за покупку!";
+            return "Спасибо,"  + ", за покупку!";
         }
     }
 }

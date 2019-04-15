@@ -22,7 +22,7 @@ namespace MvcApplication4
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            Database.SetInitializer(new BookDbInitializer());
+            Database.SetInitializer(new WebShopDbInitializer());
         }
     }
 }
