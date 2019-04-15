@@ -4,15 +4,34 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Магазин овощей</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+     <%--<link href="@Url.Content("~/Styles/StyleSheet1.css")" rel="stylesheet" type="text/css" />--%>
+     <link rel="stylesheet" href="~/Styles/StyleSheet1.css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <div id="wrapper">
+                <div id="banner">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/banner4.jpg" Width="100%" />
+                </div>
+                <div id="navigation">
+                    <ul id="nav">
+                        <li><asp:HyperLink ID="HyperLink1" runat="server">Магазин овощей</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink2" runat="server">О нас</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink3" runat="server">Администратор</asp:HyperLink></li>
+                    </ul>
+                </div>
+                <div id="context">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+<%--                <div id="footer">
+
+                </div>--%>
+            </div>
         </div>
     </form>
 </body>
