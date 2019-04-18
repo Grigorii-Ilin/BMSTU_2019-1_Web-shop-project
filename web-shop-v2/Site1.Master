@@ -5,8 +5,11 @@
 <html>
 <head runat="server">
     <title>Магазин овощей</title>
+    <link href="Styles/StyleSheet1.css" rel="stylesheet" type="text/css"/>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    
      <%--<link href="@Url.Content("~/Styles/StyleSheet1.css")" rel="stylesheet" type="text/css" />--%>
      <link rel="stylesheet" href="~/Styles/StyleSheet1.css" />
 </head>
@@ -20,7 +23,7 @@
                 <div id="navigation">
                     <ul id="nav">
                         <li><asp:HyperLink ID="HyperLink1" runat="server">Магазин овощей</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink2" runat="server">О нас</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Pages/About.aspx">О нас</asp:HyperLink></li>
                         <li><asp:HyperLink ID="HyperLink3" runat="server">Администратор</asp:HyperLink></li>
                     </ul>
                 </div>
