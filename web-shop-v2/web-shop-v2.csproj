@@ -75,11 +75,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\banner.jpg" />
-    <Content Include="Images\banner2.jpg" />
-    <Content Include="Images\banner3.jpg" />
     <Content Include="Images\banner4.jpg" />
-    <Content Include="Images\note.txt" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -91,14 +87,13 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Pages\About.aspx" />
+    <Content Include="Pages\Management\ManageProducts.aspx" />
+    <Content Include="Pages\Management\ManageProductTypes.aspx" />
     <Content Include="Styles\StyleSheet1.css" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Models\ProductModel.cs" />
-    <Content Include="App_Code\Models\ProductTypesModel.cs" />
-    <Content Include="App_Code\Models\CartModel.cs" />
     <Compile Include="Cart.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -124,6 +119,23 @@
     <Compile Include="Pages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MyModels\CartModel.cs" />
+    <Compile Include="Pages\Management\ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Management\ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Management\ManageProductTypes.aspx.cs">
+      <DependentUpon>ManageProductTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Management\ManageProductTypes.aspx.designer.cs">
+      <DependentUpon>ManageProductTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyModels\ProductTypesModel.cs" />
+    <Compile Include="MyModels\ProductModel.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -166,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Products\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
