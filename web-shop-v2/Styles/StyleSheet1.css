@@ -56,5 +56,30 @@
     min-height: 400px;
 }
 
+#ContentPlaceHolder1_pnlProducts div {
+    float: left;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+
+.productImage {
+    width: 200px;
+    height: 200px;
+    vertical-align: central;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.productName{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.productPrice{
+    font-family:  Arial, Helvetica, sans-serif;
+    color: #ea9b1e;
+}
+
 /*#footer {
 }*/

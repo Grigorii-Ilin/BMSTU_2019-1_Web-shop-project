@@ -28,7 +28,7 @@
     <p>
         Описание:</p>
     <p>
-        <asp:TextBox ID="txtDescription" runat="server" Height="67px" TextMode="MultiLine" Width="258px"></asp:TextBox>
+        <asp:TextBox ID="txtDescription" runat="server" Height="67px" TextMode="MultiLine" Width="100%"></asp:TextBox>
     </p>
     <p>
         <asp:Button ID="btnSubmit" runat="server" Text="Подтвердить" OnClick="btnSubmit_Click" />
