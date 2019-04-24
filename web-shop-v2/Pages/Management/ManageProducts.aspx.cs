@@ -12,7 +12,21 @@ namespace web_shop_v2.Pages.Management {
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 GetImages();
+
+                if (!String.IsNullOrWhiteSpace(Request.QueryString["id"])) {
+                    int id = Convert.ToInt32(Request.QueryString["id"]);
+                    FillPage(id);
+                }
             }
+        }
+
+        private void FillPage(int id) {
+            var p = new ProductModel().GetProduct(id);
+            txtDescription.Text = p.Description;
+            txtName.Text = p.Name;
+            txtPrice.Text = p.Price.ToString();
+            ddlImage.SelectedValue = p.Image;
+            ddlType.SelectedValue = p.TypeId.ToString();
         }
 
         private void GetImages() {
@@ -52,7 +66,13 @@ namespace web_shop_v2.Pages.Management {
             var model = new ProductModel();
             var p = CreateProduct();
 
-            lblResult.Text = model.InsertProduct(p);
+            if (!String.IsNullOrWhiteSpace(Request.QueryString["id"])) {
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                lblResult.Text = model.UpdateProduct(id, p);
+            }
+            else {
+                lblResult.Text = model.InsertProduct(p);
+            }
         }
     }
 }

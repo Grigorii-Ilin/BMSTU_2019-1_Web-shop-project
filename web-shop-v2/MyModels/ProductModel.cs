@@ -54,5 +54,47 @@ namespace web_shop_v2 {
                 return "Error" + e;
             }
         }
+
+        public Product GetProduct(int id) {
+            try {
+                using (var db = new VegetableDBEntities()) {
+                    var product = db.Product.Find(id);
+                    return product;
+                }
+            }
+            catch (Exception) {
+
+                return null;
+            }
+        }
+
+        public List<Product> GetAllProducts() {
+            try {
+                using (var db = new VegetableDBEntities()) {
+                    var products = (from x in db.Product
+                                    select x).ToList();
+                    return products;
+                }
+            }
+            catch (Exception) {
+
+                return null;
+            }
+        }
+
+        public List<Product> GetProductsByType(int typeId) {
+            try {
+                using (var db = new VegetableDBEntities()) {
+                    var products = (from x in db.Product
+                                    where x.TypeId == typeId
+                                    select x).ToList();
+                    return products;
+                }
+            }
+            catch (Exception) {
+
+                return null;
+            }
+        }
     }
 }

@@ -87,6 +87,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Pages\About.aspx" />
+    <Content Include="Pages\Management\Management.aspx" />
     <Content Include="Pages\Management\ManageProducts.aspx" />
     <Content Include="Pages\Management\ManageProductTypes.aspx" />
     <Content Include="Styles\StyleSheet1.css" />
@@ -120,6 +121,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyModels\CartModel.cs" />
+    <Compile Include="Pages\Management\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Management\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Management\ManageProducts.aspx.cs">
       <DependentUpon>ManageProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
