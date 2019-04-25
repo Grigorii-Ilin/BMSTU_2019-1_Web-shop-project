@@ -19,7 +19,7 @@
             <td>
                 <asp:Label ID="lblPrice" runat="server" CssClass="detailsPrice"></asp:Label><br />
                 Вес:
-                <input type="number" step="0.1" min="1.0"max ="60.0" value="0.0" name="inpAmount"> кг.<br />
+                <input type="number" step="0.1" min="1.0"max ="60.0" value="1.0" name="inpAmount"> кг.<br />
                 <asp:Button ID="btnAddToCart" runat="server" CssClass="button" OnClick="btnAddToCart_Click" Text="Добавить в корзину" />
                 <br />
                 <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
