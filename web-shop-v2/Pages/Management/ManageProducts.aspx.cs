@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace web_shop_v2.Pages.Management {
     public partial class ManageProducts : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
@@ -50,8 +51,8 @@ namespace web_shop_v2.Pages.Management {
             }
         }
 
-        private Product CreateProduct() {
-            var p = new Product();
+        private web_shop_v2.Product CreateProduct() {
+            var p = new web_shop_v2.Product();
 
             p.Name = txtName.Text;
             p.Price = Convert.ToDecimal(txtPrice.Text);

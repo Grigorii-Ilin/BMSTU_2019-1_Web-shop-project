@@ -10,9 +10,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClientId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClientId" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
-          <Property Name="Amount" Type="decimal" Precision="8" Scale="3" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="DatePurchased" Type="datetime" />
           <Property Name="IsInCart" Type="bit" Nullable="false" />
         </EntityType>
@@ -23,7 +23,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypeId" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="Price" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
           <Property Name="Description" Type="text" />
           <Property Name="Image" Type="varchar" MaxLength="150" />
         </EntityType>
@@ -82,7 +82,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TypeId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ProductTypes" Relationship="Self.FK_Product_ProductTypes" FromRole="Product" ToRole="ProductTypes" />
@@ -126,9 +126,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClientId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientId" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="8" Scale="3" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
           <Property Name="DatePurchased" Type="DateTime" Precision="3" />
           <Property Name="IsInCart" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="VegetableDBModel.FK_cart_Product" FromRole="Cart" ToRole="Product" />

@@ -3,7 +3,7 @@
   <Class Name="web_shop_v2.VegetableDBEntities">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAEAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model1.Context.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -18,7 +18,7 @@ namespace web_shop_v2 {
                     var ibtProduct = new ImageButton();
                     ibtProduct.ImageUrl = "~/Images/Products/" + p.Image;
                     ibtProduct.CssClass = "productImage";
-                    ibtProduct.PostBackUrl = "~/Pages/Product.aspx?id=" + p.Id;
+                    ibtProduct.PostBackUrl = "~/Pages/Vegetable.aspx?id=" + p.Id;
 
                     var lblName = new Label();
                     lblName.Text = p.Name;
@@ -26,7 +26,7 @@ namespace web_shop_v2 {
 
                     var lblPrice = new Label();
                     lblPrice.Text = "₽ " + p.Price;
-                    lblPrice.CssClass = "productPrice";
+                    lblPrice.CssClass = "productPriceAndAviable";
 
                     var pnlProduct = new Panel();
                     pnlProduct.Controls.Add(ibtProduct);
