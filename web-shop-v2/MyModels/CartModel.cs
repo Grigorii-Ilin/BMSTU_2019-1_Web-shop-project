@@ -10,7 +10,7 @@ namespace web_shop_v2 {
                 var db = new VegetableDBEntities();
                 db.Cart.Add(cart);
                 db.SaveChanges();
-                return cart.DatePurchased + " был успешно создан";
+                return cart.DatePurchased + " товар был успешно добавлен в корзину";
             }
             catch (Exception e) {
 
@@ -30,7 +30,7 @@ namespace web_shop_v2 {
                 p.IsInCart = cart.IsInCart;
 
                 db.SaveChanges();
-                return cart.DatePurchased + " был успешно обновлён";
+                return cart.DatePurchased + " товар был успешно обновлён в корзине";
             }
             catch (Exception e) {
 
@@ -47,7 +47,7 @@ namespace web_shop_v2 {
                 db.Cart.Remove(cart);
 
                 db.SaveChanges();
-                return cart.DatePurchased + " был успешно удалён";
+                return cart.DatePurchased + " товар был успешно удален из корзины";
             }
             catch (Exception e) {
 

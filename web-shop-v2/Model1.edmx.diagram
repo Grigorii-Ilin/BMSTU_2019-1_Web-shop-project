@@ -10,6 +10,7 @@
         <AssociationConnector Association="VegetableDBModel.FK_Product_ProductTypes" ManuallyRouted="false" />
         <EntityTypeShape EntityType="VegetableDBModel.Cart" Width="1.5" PointX="5.25" PointY="1.125" />
         <AssociationConnector Association="VegetableDBModel.FK_cart_Product" />
+        <EntityTypeShape EntityType="VegetableDBModel.UserInfo" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

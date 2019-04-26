@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:LinkButton ID="lbAddNewProduct" runat="server" CssClass="button" PostBackUrl="~/Pages/Management/ManageProducts.aspx">Добавить продукт</asp:LinkButton>
+    <asp:LinkButton ID="lbAddNewProduct" runat="server" PostBackUrl="~/Pages/Management/ManageProducts.aspx">Добавить продукт</asp:LinkButton>
 <br />
 <asp:GridView ID="grdProducts" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="sdsProducts" Width="100%" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnRowEditing="grdProducts_RowEditing">
     <AlternatingRowStyle BackColor="White" />
@@ -46,7 +46,7 @@
     </UpdateParameters>
 </asp:SqlDataSource>
 <br />
-<asp:LinkButton ID="lbAddNewProductType" runat="server" CssClass="button" PostBackUrl="~/Pages/Management/ManageProductTypes.aspx">Добавить тип продукта</asp:LinkButton>
+<asp:LinkButton ID="lbAddNewProductType" runat="server" PostBackUrl="~/Pages/Management/ManageProductTypes.aspx">Добавить тип продукта</asp:LinkButton>
 <br />
 <asp:GridView ID="grdProductTypes" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="sdsProductTypes" Width="50%" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
     <AlternatingRowStyle BackColor="White" />

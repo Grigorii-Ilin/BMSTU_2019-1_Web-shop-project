@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using web_shop_v2.MyModels;
 
 namespace web_shop_v2.Pages.Account {
     public partial class Register : System.Web.UI.Page {
@@ -35,6 +36,16 @@ namespace web_shop_v2.Pages.Account {
                 try {
                     var result = manager.Create(user, txtPasword.Text);
                     if (result.Succeeded) {
+                        var userInfo = new UserInfo {
+                            FirstName = txtFirstName.Text,
+                            LastName = txtLastName.Text,
+                            Address = txtAddress.Text,
+                            Phone = txtPhone.Text,
+                            Guid = user.Id
+                        };
+                        var userInfoModel = new UserInfoModel();
+                        userInfoModel.InsertUserInfo(userInfo);
+
                         var autentificationManager = HttpContext.Current.GetOwinContext().Authentication;
                         var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                         autentificationManager

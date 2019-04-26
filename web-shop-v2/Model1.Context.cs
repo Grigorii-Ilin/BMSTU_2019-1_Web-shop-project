@@ -28,5 +28,6 @@ namespace web_shop_v2
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductTypes> ProductTypes { get; set; }
         public virtual DbSet<Cart> Cart { get; set; }
+        public virtual DbSet<UserInfo> UserInfo { get; set; }
     }
 }
