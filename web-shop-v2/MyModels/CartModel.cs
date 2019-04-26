@@ -54,5 +54,28 @@ namespace web_shop_v2 {
                 return "Error" + e;
             }
         }
+
+        public List<Cart> GetOrdersInCart(string userId) {
+            var db = new VegetableDBEntities();
+            var orders = (from x in db.Cart
+                          where x.ClientId == userId && x.IsInCart
+                          orderby x.DatePurchased
+                          select x).ToList();
+            return orders;
+        }
+
+        public void MarkOrdersAsPurchased(List<Cart> orders) {
+            var db = new VegetableDBEntities();
+
+            if (orders != null) {
+                foreach (var cart in orders) {
+                    var oldCart = db.Cart.Find(cart.Id);
+                    oldCart.DatePurchased = DateTime.Now;
+                    oldCart.IsInCart = false;
+                }
+
+                db.SaveChanges();
+            }
+        }
     }
 }
