@@ -21,7 +21,7 @@
         <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="inputs" TextMode="Password"></asp:TextBox>
     </p>
     <p>
-        <asp:Button ID="btnConfirm" runat="server" CssClass="button" Text="Button" OnClick="btnConfirm_Click" />
+        <asp:Button ID="btnConfirm" runat="server" CssClass="button" Text="Зарегистрироваться" OnClick="btnConfirm_Click" />
     </p>
     <p>
         &nbsp;</p>

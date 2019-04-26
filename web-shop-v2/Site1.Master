@@ -22,11 +22,19 @@
                 <div id="navigation">
                     <ul id="nav">
                         <li>
-                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Index.aspx">Магазин овощей</asp:HyperLink></li>
+                            <asp:HyperLink ID="hlkHome" runat="server" NavigateUrl="~/Index.aspx">Магазин овощей</asp:HyperLink></li>
                         <li>
-                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Pages/About.aspx">О нас</asp:HyperLink></li>
+                            <asp:HyperLink ID="hlkAbout" runat="server" NavigateUrl="~/Pages/About.aspx">О нас</asp:HyperLink></li>
                         <li>
-                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Pages/Management/Management.aspx">Администратор</asp:HyperLink></li>
+                            <asp:HyperLink ID="hlkAdmin" runat="server" NavigateUrl="~/Pages/Management/Management.aspx">Администратор</asp:HyperLink></li>
+                        <li style="float: right">
+                            <asp:HyperLink ID="hlkRegister" runat="server" NavigateUrl="~/Pages/Account/Register.aspx">Зарегистрироваться</asp:HyperLink>
+                            <asp:Literal ID="litStatus" runat="server"></asp:Literal>
+                        </li>
+                        <li style="float: right">
+                            <asp:HyperLink ID="hlkLogin" runat="server" NavigateUrl="~/Pages/Account/Login.aspx">Войти</asp:HyperLink>
+                            <asp:LinkButton ID="hlbLogout" runat="server" OnClick="hlbLogout_Click">Выйти</asp:LinkButton>
+                        </li>
                     </ul>
                 </div>
                 <div id="context">

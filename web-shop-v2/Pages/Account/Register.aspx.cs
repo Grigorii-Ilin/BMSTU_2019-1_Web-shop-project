@@ -14,6 +14,8 @@ namespace web_shop_v2.Pages.Account {
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e) {
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+
             //https://stackoverflow.com/questions/20183777/keyword-not-supported-metadata
             string connectionStringEF = System.Configuration.ConfigurationManager
                 .ConnectionStrings["VegetableDBEntities"].ConnectionString;
@@ -22,7 +24,6 @@ namespace web_shop_v2.Pages.Account {
                 .EntityConnectionStringBuilder(connectionStringEF);
             string connectionStringOK = efBuilder.ProviderConnectionString;
 
-            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             userStore.Context.Database.Connection.ConnectionString = connectionStringOK;
 
             var manager = new UserManager<IdentityUser>(userStore);
