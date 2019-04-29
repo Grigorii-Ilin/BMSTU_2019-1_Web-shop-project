@@ -29,7 +29,9 @@
                             <asp:HyperLink ID="hlkAdmin" runat="server" NavigateUrl="~/Pages/Management/Management.aspx">Администратор</asp:HyperLink></li>
                         <li style="float: right">
                             <asp:HyperLink ID="hlkRegister" runat="server" NavigateUrl="~/Pages/Account/Register.aspx">Зарегистрироваться</asp:HyperLink>
-                            <asp:Literal ID="litStatus" runat="server"></asp:Literal>
+                            <asp:HyperLink ID="hlkStatus" runat="server" NavigateUrl="~/Pages/ShoppingCarts.aspx"></asp:HyperLink>
+     
+                            <%--<asp:HyperLink ID="hlkStatus" runat="server"NavigateUrl="~/Pages/ShoppingCarts.aspx"></asp:HyperLink>--%>
                         </li>
                         <li style="float: right">
                             <asp:HyperLink ID="hlkLogin" runat="server" NavigateUrl="~/Pages/Account/Login.aspx">Войти</asp:HyperLink>

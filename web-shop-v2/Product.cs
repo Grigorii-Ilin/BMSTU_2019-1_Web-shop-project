@@ -23,7 +23,7 @@ namespace web_shop_v2
         public int Id { get; set; }
         public int TypeId { get; set; }
         public string Name { get; set; }
-        public Nullable<decimal> Price { get; set; }
+        public decimal Price { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
     

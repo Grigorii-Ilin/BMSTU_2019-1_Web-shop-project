@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,17 +15,25 @@ namespace web_shop_v2 {
             var user = Context.User.Identity;
 
             if (user.IsAuthenticated) {
-                litStatus.Text = user.Name;
+                //hlkStatus.Text = user.Name;
 
                 loginAndRegisterVisible = !loginAndRegisterVisible;
                 logoutAndNameVisible = !logoutAndNameVisible;
+
+                var cartModel = new CartModel();
+                string userId = HttpContext.Current.User.Identity.GetUserId();
+                hlkStatus.Text = string.Format("{0}  ({1})"
+                    , user.Name
+                    , cartModel.GetOrdersInCart(userId).Count
+                    );
             }
 
             hlkLogin.Visible = loginAndRegisterVisible;
             hlkRegister.Visible= loginAndRegisterVisible;
 
             hlbLogout.Visible = logoutAndNameVisible;
-            litStatus.Visible= logoutAndNameVisible;
+            hlkStatus.Visible= logoutAndNameVisible;
+            
         }
 
         protected void hlbLogout_Click(object sender, EventArgs e) {

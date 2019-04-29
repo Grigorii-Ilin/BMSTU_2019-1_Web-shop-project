@@ -87,24 +87,24 @@
     margin-right: 20px;
 }
 
-.detailsDescription{
+.detailsDescription {
     width: 35%;
     font-style: italic;
 }
 
-.detailsPrice{
-    font-size:20px;
-    font-weight:bold;
+.detailsPrice {
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.button{
+.button {
     padding: 10px;
     margin: 10px;
-    color:black;
-    border:0;
-    border-radius:4px;
-    clear:both;
-    background:linear-gradient(to bottom, white, green);
+    color: black;
+    border: 0;
+    border-radius: 4px;
+    clear: both;
+    background: linear-gradient(to bottom, white, green);
 }
 
 .inputs {
@@ -118,10 +118,27 @@
     width: 260px;
 }
 
-.inputs:focus{
-    background: #FFF;
-    box-shadow: 0 0 25px, #CCC;
+    .inputs:focus {
+        background: #FFF;
+        box-shadow: 0 0 25px, #CCC;
+    }
+
+.cartTable {
+    text-align: center;
+    border: 15px, solid, #dcdad4;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
 }
+
+    .cartTable h4 {
+        padding: 0;
+        margin: 0;
+    }
+
+    .cartTable tr td select{
+        width: 100px;
+    }
 
 
 /*#footer {
