@@ -32,8 +32,10 @@ namespace web_shop_v2.Pages {
             foreach (var cart in purchasedList) {
                 var product = productModel.GetProduct(cart.ProductId);
 
-                decimal pricePerWeigth = Math.Round((product.Price * cart.Amount), 2);
-                subTotal += pricePerWeigth;
+                //decimal pricePerWeigth = Math.Round((product.Price * cart.Amount), 2);
+                //subTotal += pricePerWeigth;
+                var ppw = new PricePerWeigth() { Price = product.Price, Amount= cart.Amount };
+                subTotal += ppw.Calc();
 
                 var ibtProductImage = new ImageButton {
                     ImageUrl = String.Format("~/Images/Products/{0}", product.Image),
@@ -52,43 +54,44 @@ namespace web_shop_v2.Pages {
                     CssClass = "cartTable"
                 };
 
-                TableCell[,] cells = new TableCell[6, 2];
+                TableCell[] cells = new TableCell[6];
                 for (int i = 0; i < cells.GetLength(0); i++) {
-                    for (int j = 0; j < cells.GetLength(1); j++) {
-                        cells[i, j] = new TableCell();
-                    }
+                    //for (int j = 0; j < cells.GetLength(1); j++) {
+                        cells[i] = new TableCell();
+                    //}
                 }
 
                 //cells[0, 0].RowSpan = 2;
-                cells[0, 0].Width = 50;
-                cells[0, 0].Controls.Add(ibtProductImage);
+                cells[0].Width = 50;
+                cells[0].Controls.Add(ibtProductImage);
 
                 //cells[1, 0].RowSpan = 2;
-                cells[1, 0].Text = String.Format("<h4>{0}</h4>", product.Name);
-                cells[1, 0].HorizontalAlign = HorizontalAlign.Left;
+                cells[1].Text = String.Format("<h4>{0}</h4>", product.Name);
+                cells[1].HorizontalAlign = HorizontalAlign.Left;
 
-                cells[2, 0].Text = "Цена за 1 кг.: <br>" + product.Price + " ₽";
+                cells[2].Text = "Цена за 1 кг.: <br>" + product.Price + " ₽";
                 //cells[2, 1].Text = product.Price + " ₽";
 
-                cells[3, 0].Text = "Вес:<br>" + cart.Amount + " кг.";
+                cells[3].Text = "Вес:<br>" + cart.Amount + " кг.";
                 //cells[3, 1].Text = cart.Amount + " кг.";
 
-                cells[4, 0].Text = "Итого:<br>" + pricePerWeigth.ToString() + " ₽";
+                //cells[4, 0].Text = "Итого:<br>" + pricePerWeigth.ToString() + " ₽";
+                cells[4].Text = "Итого:<br>" + ppw.Calc().ToString() + " ₽";
                 //cells[4, 1].Text = pricePerWeigth.ToString();
 
                 //cells[5, 0].RowSpan = 2;
-                cells[5, 0].Controls.Add(lbtDelete);
+                cells[5].Controls.Add(lbtDelete);
 
                 //TableRow[] tableRows = new TableRow[2];
                 var tableRow = new TableRow();
-                for (int i = 0; i < 1; i++) {
+                //for (int i = 0; i < 1; i++) {
                     //tableRows[i] = new TableRow();
-                    for (int j = 0; j < cells.GetLength(0); j++) {
+                    for (int i = 0; i < cells.GetLength(0); i++) {
                         //tableRows[i].Cells.Add(cells[j, i]);
-                        tableRow.Cells.Add(cells[j, i]);
+                        tableRow.Cells.Add(cells[i]);
                     }
                     //table.Rows.Add(tableRows[i]);
-                }
+                //}
                 table.Rows.Add(tableRow);
                 pnlShoppingCarts.Controls.Add(table);
             }
