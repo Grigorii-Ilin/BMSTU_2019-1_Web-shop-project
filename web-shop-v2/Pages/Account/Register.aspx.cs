@@ -20,7 +20,6 @@ namespace web_shop_v2.Pages.Account {
             //https://stackoverflow.com/questions/20183777/keyword-not-supported-metadata
             string connectionStringEF = System.Configuration.ConfigurationManager
                 .ConnectionStrings["VegetableDBEntities"].ConnectionString;
-            //if (connectionStringEF.ToLower().StartsWith("metadata=")) {
             var efBuilder = new System.Data.Entity.Core.EntityClient
                 .EntityConnectionStringBuilder(connectionStringEF);
             string connectionStringOK = efBuilder.ProviderConnectionString;

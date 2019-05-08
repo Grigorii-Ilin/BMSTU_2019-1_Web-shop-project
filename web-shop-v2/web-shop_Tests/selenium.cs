@@ -58,7 +58,6 @@ namespace AutoTest {
             driver.FindElement(By.Id(cph + "txtPasword")).SendKeys("111111");
             driver.FindElement(By.Id(cph + "btnConfirm")).Click();
 
-            //Thread.Sleep(10000);
             var hlkStatus = driver.FindElement(By.Id("hlkStatus"));
             bool result = hlkStatus.Text.Contains(login.ToUpper());
 

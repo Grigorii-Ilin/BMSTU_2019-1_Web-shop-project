@@ -25,16 +25,13 @@ namespace web_shop_v2.Pages {
         }
 
         private void CreateShopTable(List<Cart> purchasedList, out decimal subTotal) {
-            //decimal subTotal = new decimal(0.0);
             subTotal = 0.00M;
             var productModel = new ProductModel();
 
             foreach (var cart in purchasedList) {
                 var product = productModel.GetProduct(cart.ProductId);
 
-                //decimal pricePerWeigth = Math.Round((product.Price * cart.Amount), 2);
-                //subTotal += pricePerWeigth;
-                var ppw = new PricePerWeigth() { Price = product.Price, Amount= cart.Amount };
+                var ppw = new PricePerWeigth() { Price = product.Price, Amount = cart.Amount };
                 subTotal += ppw.Calc();
 
                 var ibtProductImage = new ImageButton {
@@ -56,42 +53,27 @@ namespace web_shop_v2.Pages {
 
                 TableCell[] cells = new TableCell[6];
                 for (int i = 0; i < cells.GetLength(0); i++) {
-                    //for (int j = 0; j < cells.GetLength(1); j++) {
-                        cells[i] = new TableCell();
-                    //}
+                    cells[i] = new TableCell();
                 }
 
-                //cells[0, 0].RowSpan = 2;
                 cells[0].Width = 50;
                 cells[0].Controls.Add(ibtProductImage);
 
-                //cells[1, 0].RowSpan = 2;
                 cells[1].Text = String.Format("<h4>{0}</h4>", product.Name);
                 cells[1].HorizontalAlign = HorizontalAlign.Left;
 
                 cells[2].Text = "Цена за 1 кг.: <br>" + product.Price + " ₽";
-                //cells[2, 1].Text = product.Price + " ₽";
 
                 cells[3].Text = "Вес:<br>" + cart.Amount + " кг.";
-                //cells[3, 1].Text = cart.Amount + " кг.";
 
-                //cells[4, 0].Text = "Итого:<br>" + pricePerWeigth.ToString() + " ₽";
                 cells[4].Text = "Итого:<br>" + ppw.Calc().ToString() + " ₽";
-                //cells[4, 1].Text = pricePerWeigth.ToString();
 
-                //cells[5, 0].RowSpan = 2;
                 cells[5].Controls.Add(lbtDelete);
 
-                //TableRow[] tableRows = new TableRow[2];
                 var tableRow = new TableRow();
-                //for (int i = 0; i < 1; i++) {
-                    //tableRows[i] = new TableRow();
-                    for (int i = 0; i < cells.GetLength(0); i++) {
-                        //tableRows[i].Cells.Add(cells[j, i]);
-                        tableRow.Cells.Add(cells[i]);
-                    }
-                    //table.Rows.Add(tableRows[i]);
-                //}
+                for (int i = 0; i < cells.GetLength(0); i++) {
+                    tableRow.Cells.Add(cells[i]);
+                }
                 table.Rows.Add(tableRow);
                 pnlShoppingCarts.Controls.Add(table);
             }

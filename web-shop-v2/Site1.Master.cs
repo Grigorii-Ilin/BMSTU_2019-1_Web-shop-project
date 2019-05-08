@@ -15,8 +15,6 @@ namespace web_shop_v2 {
             var user = Context.User.Identity;
 
             if (user.IsAuthenticated) {
-                //hlkStatus.Text = user.Name;
-
                 loginAndRegisterVisible = !loginAndRegisterVisible;
                 logoutAndNameVisible = !logoutAndNameVisible;
 

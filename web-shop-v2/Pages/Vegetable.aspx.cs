@@ -30,19 +30,8 @@ namespace web_shop_v2.Pages {
                 string clientId = Context.User.Identity.GetUserId();
                 if (clientId != null) {
                     int id = Convert.ToInt32(Request.QueryString["id"]);
-
-                    //string  amount = string.IsNullOrEmpty(Request.Params["inpAmount"])
-                    // ? ""
-                    // : Request.Params["inpAmount"];
                     string amountStr = Request.Params["inpAmount"];
-                    //decimal amount = Convert.ToDecimal(amountStr);
                     decimal amount = Decimal.Parse(amountStr, new NumberFormatInfo() { NumberDecimalSeparator = "." });
-
-
-                    //decimal amount = Convert.ToDecimal(Request.Form.GetValues("inpAmount"));
-                    //(Request["inpAmount"]);
-                    //lblResult.Text = amount.ToString();
-                    //Console.WriteLine(amount.ToString());
 
                     var cart = new Cart() {
                         Amount = amount,

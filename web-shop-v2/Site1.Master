@@ -30,8 +30,6 @@
                         <li style="float: right">
                             <asp:HyperLink ID="hlkRegister" runat="server" NavigateUrl="~/Pages/Account/Register.aspx">Зарегистрироваться</asp:HyperLink>
                             <asp:HyperLink ID="hlkStatus" runat="server" NavigateUrl="~/Pages/ShoppingCarts.aspx"></asp:HyperLink>
-     
-                            <%--<asp:HyperLink ID="hlkStatus" runat="server"NavigateUrl="~/Pages/ShoppingCarts.aspx"></asp:HyperLink>--%>
                         </li>
                         <li style="float: right">
                             <asp:HyperLink ID="hlkLogin" runat="server" NavigateUrl="~/Pages/Account/Login.aspx">Войти</asp:HyperLink>
@@ -43,9 +41,6 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
-                <%--                <div id="footer">
-
-                </div>--%>
             </div>
         </div>
     </form>

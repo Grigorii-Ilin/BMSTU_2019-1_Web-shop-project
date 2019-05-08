@@ -1,1 +1,0 @@
-<Playlist Version="1.0"><Add Test="AutoTest.Test.GoToAbout_Test" /><Add Test="AutoTest.Test.Login_Test" /><Add Test="AutoTest.Test.AddToCart_Test" /><Add Test="web_shop_v2_Tests.PricePerWeigthTest.CalcPPW_VariousPricesAndAmounts_1()" /><Add Test="web_shop_v2_Tests.PricePerWeigthTest.CalcPPW_VariousPricesAndAmounts_2()" /></Playlist>
