@@ -9,6 +9,7 @@ using System.Threading;
 using System.Diagnostics;
 using System;
 
+
 namespace AutoTest {
     [TestFixture]
     public class Test {
@@ -49,7 +50,7 @@ namespace AutoTest {
         }
 
         [Test]
-        public void _2_Login_Test() {
+        public void _4_Login_Test() {
             const string login = "asd@asd.ru";
             const string cph = "ContentPlaceHolder1_";
 
@@ -65,14 +66,14 @@ namespace AutoTest {
         }
 
         [Test]
-        public void _3_AddToCart_Test() {
+        public void _5_AddToCart_Test() {
             const string cph = "ctl00$ContentPlaceHolder1$";
 
-            driver.FindElement(By.Name(cph+"ctl01")).Click();
+            driver.FindElement(By.Name(cph + "ctl01")).Click();
             var inpAmount1 = driver.FindElement(By.Name("inpAmount"));
             inpAmount1.Clear();
             inpAmount1.SendKeys("2.8");
-            driver.FindElement(By.Name(cph+"btnAddToCart")).Click();
+            driver.FindElement(By.Name(cph + "btnAddToCart")).Click();
 
             driver.FindElement(By.Id("hlkHome")).Click();
             driver.FindElement(By.Name(cph + "ctl07")).Click();
@@ -87,7 +88,39 @@ namespace AutoTest {
 
             bool result = body.Text.Contains("Приятного аппетита!");
             Assert.AreEqual(result, true);
+        }
 
+        [Test]
+        public void _2_AdminLogin() {
+            const string cph = "ContentPlaceHolder1_";
+
+            driver.FindElement(By.Id("hlkLogin")).Click();
+            driver.FindElement(By.Id(cph + "txtLogin")).SendKeys("admin@admin.ru");
+            driver.FindElement(By.Id(cph + "txtPasword")).SendKeys("123456");
+            driver.FindElement(By.Id(cph + "btnConfirm")).Click();
+        }
+
+        [Test]
+        public void _3_AdminAddNewItem() {
+            const string cph = "ContentPlaceHolder1_";
+            const string newVegetableName = "Кукуруза";
+
+            driver.Navigate().GoToUrl("http://localhost:50723/Pages/Management/Management.aspx");
+
+            //driver.FindElement(By.Id(cph + "hlkAdmin")).Click();
+            driver.FindElement(By.Id(cph+ "lbAddNewProduct")).Click();
+
+            driver.FindElement(By.Id(cph + "txtName")).SendKeys(newVegetableName);
+            driver.FindElement(By.Id(cph + "txtPrice")).SendKeys("100,00");
+            driver.FindElement(By.Id(cph + "txtDescription")).SendKeys("Вкусная еда");
+            driver.FindElement(By.Id(cph + "btnSubmit")).Click();
+
+            var body = driver.FindElement(By.TagName("body"));
+            bool result = body.Text.Contains(newVegetableName);
+
+            Assert.AreEqual(result, true);
+
+            driver.FindElement(By.Id("hlbLogout")).Click();
         }
     }
 }
