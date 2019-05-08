@@ -40,7 +40,7 @@ namespace AutoTest {
         }
 
         [Test]
-        public void GoToAbout_Test() {
+        public void _1_GoToAbout_Test() {
             var hlkAbout = driver.FindElement(By.Id("hlkAbout"));
             hlkAbout.Click();
             var body = driver.FindElement(By.TagName("body"));
@@ -49,7 +49,7 @@ namespace AutoTest {
         }
 
         [Test]
-        public void Login_Test() {
+        public void _2_Login_Test() {
             const string login = "asd@asd.ru";
             const string cph = "ContentPlaceHolder1_";
 
@@ -63,6 +63,32 @@ namespace AutoTest {
             bool result = hlkStatus.Text.Contains(login.ToUpper());
 
             Assert.AreEqual(result, true);
+        }
+
+        [Test]
+        public void _3_AddToCart_Test() {
+            const string cph = "ctl00$ContentPlaceHolder1$";
+
+            driver.FindElement(By.Name(cph+"ctl01")).Click();
+            var inpAmount1 = driver.FindElement(By.Name("inpAmount"));
+            inpAmount1.Clear();
+            inpAmount1.SendKeys("2.8");
+            driver.FindElement(By.Name(cph+"btnAddToCart")).Click();
+
+            driver.FindElement(By.Id("hlkHome")).Click();
+            driver.FindElement(By.Name(cph + "ctl07")).Click();
+            var inpAmount2 = driver.FindElement(By.Name("inpAmount"));
+            inpAmount2.Clear();
+            inpAmount2.SendKeys("13,6");
+            driver.FindElement(By.Name(cph + "btnAddToCart")).Click();
+
+            driver.FindElement(By.Id("hlkStatus")).Click();
+            driver.FindElement(By.Name(cph + "btnCheckOut")).Click();
+            var body = driver.FindElement(By.TagName("body"));
+
+            bool result = body.Text.Contains("Приятного аппетита!");
+            Assert.AreEqual(result, true);
+
         }
     }
 }
